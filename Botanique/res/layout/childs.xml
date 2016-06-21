@@ -1,0 +1,34 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+
+　　  　  <TextView   
+        android:id="@+id/nameChild"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:paddingLeft="25dp"  
+        android:paddingTop="5dp"  
+        android:paddingBottom="5dp"  
+        android:textSize="15sp"  
+       android:text="No Data"
+       android:layout_weight="1" />   
+
+
+ 　  <TextView   
+        android:id="@+id/distanceChild"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:paddingLeft="80dp"  
+        android:paddingTop="5dp"  
+        android:paddingBottom="5dp"  
+        android:textSize="15sp"  
+       android:text="No Data" 
+       android:layout_weight="1"/> 
+  
+　　  
+
+
+</LinearLayout>

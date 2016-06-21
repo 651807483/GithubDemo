@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <RelativeLayout android:layout_height="60sp"
+        android:layout_width="match_parent"
+        android:background="#00FF00">
+        <ImageButton
+            android:id="@+id/back" 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/actionbar_back"
+            android:layout_centerVertical="true"
+            android:background="#00000000"/>
+      
+            
+        
+       <TextView
+        android:layout_height="60sp"
+        android:layout_width="match_parent"    
+        android:text="离线地图功能"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"  />
+     
+        
+    </RelativeLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+     
+        >
+        <TextView 
+            android:id="@+id/cityname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/cityname"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/update"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textColor="#FF0000" 
+             android:text=""/>
+
+      <TextView
+        android:id="@+id/ratio"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="" />
+            
+          
+    </LinearLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="@color/black2"/>
+    <LinearLayout
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button 
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/start"
+            android:background="#00FF00"
+            android:onClick="start"/>
+        <View 
+        android:layout_width="1dip"
+        android:layout_height="45dp"
+        android:background="@color/black2"/>
+           <Button 
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/stop"
+            android:background="#00FF00"
+            android:onClick="stop"/>
+    </LinearLayout>
+
+</LinearLayout>

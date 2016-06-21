@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+  
+   >
+
+      <RelativeLayout
+          android:id="@+id/id_marker_info"
+          android:layout_width="fill_parent"
+          android:layout_height="130dp"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="#00000000"
+          android:visibility="visible" >
+
+          <Button
+              android:id="@+id/btn_pop_navigate"
+              android:layout_width="195dp"
+              android:layout_height="50dp"
+              android:layout_alignParentRight="true"
+              android:layout_alignParentBottom="true"
+              android:background="#00ff00"
+              android:clickable="true"
+              android:text="@string/pop_navigate"
+              android:textSize="20sp" />
+
+          <ImageView
+              android:id="@+id/around_bottombar_line"
+              android:layout_width="10dp"
+             android:layout_height="50dp"        
+             android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:src="@drawable/around_bottombar_line" />
+
+          <Button
+              android:id="@+id/btn_pop_info"
+              android:layout_width="195dp"
+              android:layout_height="50dp"
+              android:layout_alignParentBottom="true"
+              android:layout_alignParentLeft="true"
+              android:background="#00ff00"
+              android:clickable="true"
+              android:text="@string/pop_info"
+              android:textSize="20sp" />
+<!--<TextView
+              android:id="@+id/distance"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:layout_above="@+id/btn_pop_info"
+              android:layout_alignParentLeft="true"
+              android:layout_marginTop="10dp"
+              android:background="#00ff00" 
+         
+              android:textSize="20sp"
+              android:textColor="#000000"
+              android:textStyle="bold"
+              android:paddingLeft="10dp"
+              android:paddingTop="10dp"/>  -->
+          
+<!--  <ImageButton
+               android:id="@+id/go_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentRight="true"
+               android:layout_alignParentTop="true"
+               android:layout_marginRight="14dp"
+               android:background="#00000000"
+               android:clickable="true"
+               android:src="@drawable/go_btn" /> -->
+          
+
+      </RelativeLayout>
+
+     
+
+</RelativeLayout>

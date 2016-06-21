@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="#E6E6E6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FF00">
+            <TextView  
+                android:id="@+id/chinaname_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               
+                android:textSize="30sp"
+                android:paddingLeft="8dp"
+                android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+           
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" 
+                android:orientation="vertical"
+                android:layout_weight="2" 
+                android:layout_marginRight="100dp">
+             
+               <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView
+                    android:id="@+id/othername"
+                    style="@style/text_style" 
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Othername" />                              
+                
+                  <TextView
+                    android:id="@+id/othername_info"
+                    style="@style/text_style" 
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1" />
+               
+                </LinearLayout>
+                <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                    android:id="@+id/Englishname"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Englishname"
+                    style="@style/text_style"/>
+                  <TextView 
+                    android:id="@+id/Englishname_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                   style="@style/text_style"/>
+                </LinearLayout>
+                <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                     android:id="@+id/scientificname"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Scientificname"
+                    style="@style/text_style"/>
+                  <TextView 
+                      android:id="@+id/scientificname_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                     style="@style/text_style"/>
+                </LinearLayout>
+           
+            
+           </LinearLayout>
+            <LinearLayout 
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_weight="1">
+                 <ImageView 
+                     android:id="@+id/botanique_image"
+                     android:layout_width="100dip"
+                     android:layout_height="100dip"
+                     android:src="@drawable/lizhi"
+                     android:scaleType="centerCrop"/>
+             </LinearLayout>
+        </RelativeLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                 <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                      android:id="@+id/scholar_name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Scholarname"
+                    style="@style/text_style"/>
+                  <TextView 
+                    android:id="@+id/scholarname_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                     style="@style/text_style"/>
+                </LinearLayout>
+                   <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                    android:id="@+id/type"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Type"
+                    style="@style/text_style"/>
+                  <TextView 
+                      android:id="@+id/type_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                    style="@style/text_style"/>
+                </LinearLayout>
+                 <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                      android:id="@+id/orignalplace"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Orignalplace"
+                    style="@style/text_style"/>
+                  <TextView 
+                    android:id="@+id/orignalplace_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                    style="@style/text_style"/>
+                 </LinearLayout>
+            
+                 <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                  <TextView 
+                      android:id="@+id/behavior"
+                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"                 
+                    android:text="@string/Behavior"
+                    style="@style/text_style"/>
+                  <TextView 
+                     android:id="@+id/behavior_info"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"                 
+                    android:text="@string/Chinaname1"
+                     style="@style/text_style"/>
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FF00" >
+              <TextView              
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/FeatureUse_title"
+                android:paddingLeft="8dp"
+                android:textSize="20sp"               
+                android:textColor="#FFFFFF"/>        
+         </LinearLayout>
+           <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+                <TextView
+                android:id="@+id/featureUse_info"  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/FeatureUse"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                 />                  
+          </LinearLayout>
+        
+    </LinearLayout>
+    
+
+</ScrollView>

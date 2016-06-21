@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+       <declare-styleable name="TabRadioButton" >
+        <attr name="drawableSize" format="dimension" />
+        <attr name="drawableTop" format="dimension" />
+        <attr name="drawableBottom" format="dimension" />
+        <attr name="drawableRight" format="dimension" />
+        <attr name="drawableLeft" format="dimension" />
+    </declare-styleable>
+    
+</resources>

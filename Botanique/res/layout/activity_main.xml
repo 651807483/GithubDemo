@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:TabRadioButton="http://schemas.android.com/apk/res/com.coderhu.botanique.main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context="com.coderhu.botanique.main.MainActivity"
+    android:id="@+id/main" >
+    
+     <FrameLayout 
+       android:id="@+id/fragment_container"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" >
+    </FrameLayout>
+   
+    <RadioGroup
+        android:id="@+id/tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_tab_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="3dip" 
+        android:visibility="visible"
+        
+        
+        >
+
+        <com.coderhu.botanique.common.TabRadioButton
+            android:id="@+id/tab_map"
+            style="@style/TabMenuText"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            TabRadioButton:drawableSize="32dp"
+            TabRadioButton:drawableTop="@drawable/tab_map_bg"
+            android:checked="true"
+            android:clickable="true"
+            android:text="@string/tab_map_text"
+            android:textColor="@color/color_tab" />
+
+        <com.coderhu.botanique.common.TabRadioButton
+            android:id="@+id/tab_nearby"
+            style="@style/TabMenuText"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            TabRadioButton:drawableSize="32dp"
+            TabRadioButton:drawableTop="@drawable/tab_nearby_bg"
+            android:clickable="true"
+            android:text="@string/tab_nearby_text"
+            android:textColor="@color/color_tab" />
+<!--  <com.coderhu.botanique.common.TabRadioButton
+            android:id="@+id/tab_search"
+            style="@style/TabMenuText"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            TabRadioButton:drawableSize="32dp"
+            TabRadioButton:drawableTop="@drawable/tab_search_bg"
+            android:clickable="true"
+            android:text="@string/tab_search_text"
+            android:textColor="@color/color_tab" /> -->
+       
+
+        <com.coderhu.botanique.common.TabRadioButton
+            android:id="@+id/tab_my"
+            style="@style/TabMenuText"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            TabRadioButton:drawableSize="32dp"
+            TabRadioButton:drawableTop="@drawable/tab_account_bg"
+            android:clickable="true"
+            android:text="@string/tab_account_text"
+            android:textColor="@color/color_tab" />
+    </RadioGroup>
+
+</RelativeLayout>
