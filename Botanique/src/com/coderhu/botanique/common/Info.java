@@ -17,28 +17,26 @@ public class Info implements Serializable{
 	private String FeatureUse;
 	private String Image;
     private double Latitude;  //精度 
-    private double Longitude;  //纬度
-    private String Color;
+    private double longitude;  //纬度
+    private String name;
    
    
-
-
-
-//    public static ArrayList<Info> infos = new ArrayList<Info>();  
-//  
-//    static  
-//    {  
-////        infos.add(new Info(22.5500390000,113.9199270000,  "荷兰花卉小镇" ));  
-////        infos.add(new Info(22.5318390000,113.9400990000, "桂庙新村"));  
-////        infos.add(new Info(22.5347070000,113.9446610000,  "深大南区运动场" ));  
-//      
-//    }  
+  
+    public static ArrayList<Info> infos = new ArrayList<Info>();  
+  
+    static  
+    {  
+//        infos.add(new Info(22.5500390000,113.9199270000,  "荷兰花卉小镇" ));  
+//        infos.add(new Info(22.5318390000,113.9400990000, "桂庙新村"));  
+//        infos.add(new Info(22.5347070000,113.9446610000,  "深大南区运动场" ));  
+      
+    }  
   public Info () {
 	
   }
      
   
-    public Info(String Type,String Chinaname,String Englishname,String Anothername,String Scientificname,String Scholarname,String Orignalplace,String Behavior,String FeatureUse,double Latitude,double Longitude,String Image)  
+    public Info(String Type,String Chinaname,String Englishname,String Anothername,String Scientificname,String Scholarname,String Orignalplace,String Behavior,String FeatureUse,double Latitude,double longitude,String Image)  
     {  
         super();  
         this.Type = Type;
@@ -52,7 +50,7 @@ public class Info implements Serializable{
         this.FeatureUse = FeatureUse;
         this.Image = Image;
         this.Latitude = Latitude;  
-        this.Longitude = Longitude;   
+        this.longitude = longitude;   
       
     }  
   
@@ -158,12 +156,12 @@ public class Info implements Serializable{
   
     public double getLongitude()  
     {  
-        return Longitude;  
+        return longitude;  
     }  
   
     public void setLongitude(double longitude)  
     {  
-        this.Longitude = longitude;  
+        this.longitude = longitude;  
     }  
     public String getImage() {
 		return Image;
@@ -173,14 +171,8 @@ public class Info implements Serializable{
 	public void setImage(String image) {
 		Image = image;
 	}
-	  
-	public String getColor() {
-			return Color;
-		}
-
-
-	public void setColor(String color) {
-			Color = color;
-	}
+   public String getName(){
+	   return name;
+   }
    
 }

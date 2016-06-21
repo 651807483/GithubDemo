@@ -12,7 +12,7 @@ import android.util.Log;
 
 public class SQLdm {
 	 //数据库存储路径    
-    String filePath = "data/data/com.coderhu.botanique.main/tree.db";    
+    String filePath = "data/data/com.coderhu.botanique.main/Botanique.db";    
     //数据库存放的文件夹 data/data/com.main.jh 下面    
     String pathStr = "data/data/com.coderhu.botanique.main";    
         
@@ -23,33 +23,33 @@ public class SQLdm {
         File jhPath=new File(filePath);    
             //查看数据库文件是否存在    
             if(jhPath.exists()){    
-                Log.i("tree.db", "存在数据库");  
+                Log.i("Botanique.db", "存在数据库");  
                 //存在则直接返回打开的数据库    
                 return SQLiteDatabase.openOrCreateDatabase(jhPath, null);    
             }else{    
                 //不存在先创建文件夹    
                 File path=new File(pathStr);    
-                Log.i("tree.db", "pathStr="+path);  
+                Log.i("Botanique.db", "pathStr="+path);  
                 if (path.mkdir()){    
-                    Log.i("tree.db", "创建成功");   
+                    Log.i("Botanique.db", "创建成功");   
                 }else{    
-                    Log.i("tree.db", "创建失败");  
+                    Log.i("Botanique.db", "创建失败");  
                 };    
                 try {    
                     //得到资源    
                     AssetManager am= context.getAssets();    //在AssertManager中不能处理单个超过 1MB的文件
                     //得到数据库的输入流    
-                    InputStream is=am.open("tree.db");    
-                    Log.i("tree.db", is+"");  
+                    InputStream is=am.open("Botanique.db");    
+                    Log.i("Botanique.db", is+"");  
                     //用输出流写到SDcard上面      
                     FileOutputStream fos=new FileOutputStream(jhPath);    
-                    Log.i("tree.db", "fos="+fos);  
-                    Log.i("tree.db", "jhPath="+jhPath);  
+                    Log.i("Botanique.db", "fos="+fos);  
+                    Log.i("Botanique.db", "jhPath="+jhPath);  
                     //创建byte数组  用于1KB写一次    
                     byte[] buffer=new byte[1024];    
                     int count = 0;    
                     while((count = is.read(buffer))>0){    
-                        Log.i("tree.db", "得到");  
+                        Log.i("Botanique.db", "得到");  
                         fos.write(buffer,0,count);    
                     }    
                     //最后关闭就可以了    

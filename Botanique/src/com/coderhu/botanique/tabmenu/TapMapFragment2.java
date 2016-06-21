@@ -23,7 +23,7 @@ public class TapMapFragment2 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.fragment_my, container, false);
+		View view = inflater.inflate(R.layout.fragment_search, container, false);
 		return view;
 	}
 

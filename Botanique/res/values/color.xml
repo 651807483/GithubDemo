@@ -4,6 +4,4 @@
     <color name="color_tab_background">#FFFFFF</color>
     <color name="color_tab_selected">#33CC33</color>
     <color name="color_tab_unselected">#808080</color>
-    <color name="black2">#ffeeeeee</color>
-    <color name="white">#ffffff</color> 
 </resources>

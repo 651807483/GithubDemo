@@ -4,74 +4,49 @@
     android:layout_height="match_parent" 
   
    >
-
+    
+    
       <RelativeLayout
-          android:id="@+id/id_marker_info"
-          android:layout_width="fill_parent"
-          android:layout_height="130dp"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:background="#00000000"
-          android:visibility="visible" >
+        android:id="@+id/id_marker_info"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:layout_alignParentBottom="true"
+       >
 
-          <Button
-              android:id="@+id/btn_pop_navigate"
-              android:layout_width="195dp"
-              android:layout_height="50dp"
-              android:layout_alignParentRight="true"
-              android:layout_alignParentBottom="true"
-              android:background="#00ff00"
-              android:clickable="true"
-              android:text="@string/pop_navigate"
-              android:textSize="20sp" />
+        <Button
+            android:id="@+id/btn_pop_info"
+            android:layout_width="195dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:text="@string/pop_info" 
+            android:background="#00ff00"
+            
+         />
 
-          <ImageView
-              android:id="@+id/around_bottombar_line"
-              android:layout_width="10dp"
-             android:layout_height="50dp"        
-             android:layout_alignParentBottom="true"
-              android:layout_centerHorizontal="true"
-              android:src="@drawable/around_bottombar_line" />
+        <Button
+            android:id="@+id/btn_pop_navigate"
+            android:layout_width="195dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:text="@string/pop_navigate"
+            android:background="#00ff00"
+          />
 
-          <Button
-              android:id="@+id/btn_pop_info"
-              android:layout_width="195dp"
-              android:layout_height="50dp"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentLeft="true"
-              android:background="#00ff00"
-              android:clickable="true"
-              android:text="@string/pop_info"
-              android:textSize="20sp" />
-<!--<TextView
-              android:id="@+id/distance"
-              android:layout_width="match_parent"
-              android:layout_height="50dp"
-              android:layout_above="@+id/btn_pop_info"
-              android:layout_alignParentLeft="true"
-              android:layout_marginTop="10dp"
-              android:background="#00ff00" 
-         
-              android:textSize="20sp"
-              android:textColor="#000000"
-              android:textStyle="bold"
-              android:paddingLeft="10dp"
-              android:paddingTop="10dp"/>  -->
-          
-<!--  <ImageButton
-               android:id="@+id/go_btn"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_alignParentRight="true"
-               android:layout_alignParentTop="true"
-               android:layout_marginRight="14dp"
-               android:background="#00000000"
-               android:clickable="true"
-               android:src="@drawable/go_btn" /> -->
-          
+        <ImageView
+            android:id="@+id/around_bottombar_line"
+            android:layout_width="10dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/around_bottombar_line"
+           />
 
-      </RelativeLayout>
-
-     
+    </RelativeLayout>
 
 </RelativeLayout>

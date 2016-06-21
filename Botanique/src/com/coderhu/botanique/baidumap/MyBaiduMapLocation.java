@@ -9,7 +9,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,7 +21,6 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.BaiduMap.OnMapTouchListener;
 import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
@@ -41,12 +39,9 @@ import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.location.BDLocation;
 import com.coderhu.botanique.common.Info;
-import com.coderhu.botanique.main.MainActivity;
 import com.coderhu.botanique.main.MainApplication;
 import com.coderhu.botanique.main.R;
 import com.coderhu.botanique.tabmenu.TabMapFragment;
-import com.coderhu.botanique.baidumap.MyOrientationListener;
-import com.coderhu.botanique.baidumap.MyOrientationListener.OnOrientationListener;
 
 
 
@@ -56,21 +51,15 @@ public class MyBaiduMapLocation{
 	BaiduMap mBaiduMap;
 	boolean isFirstLoc = true; // 是否首次定位
 	LocationClient mLocationClient;
-	private LocationMode mCurrentMode = LocationMode.NORMAL;
+	private LocationMode mCurrentMode;
 	BitmapDescriptor mCurrentMarker = null;
 	Drawable location_compass;
 	Drawable location_follow;
 	Drawable location_normal;
 	Activity context;
     MainApplication myApp;
-    private double mCurrentLantitude;
-   	private double mCurrentLongitude;
-    LatLng mCurrentlLatLng;
-   	private float mCurrentAccracy;
-   	private int mXDirection;
-    boolean isLocation = false;
-   
-	private MyOrientationListener myOrientationListener;
+    public BDLocationListener myListener = new MyLocationListener();
+
     
     
     
@@ -126,7 +115,7 @@ public class MyBaiduMapLocation{
                                 .setMyLocationConfigeration(new MyLocationConfiguration(
                                        mCurrentMode, true, mCurrentMarker));
                         
-                       // myApp.getmTabMapFragment().addInfosOverlay(myApp.getList());
+                        myApp.getmTabMapFragment().addInfosOverlay(Info.infos);
                        
 					break;
                    case COMPASS:
@@ -136,7 +125,7 @@ public class MyBaiduMapLocation{
                           mBaiduMap
                                .setMyLocationConfigeration(new MyLocationConfiguration(
                                     mCurrentMode, true, mCurrentMarker));
-                        // myApp.getmTabMapFragment().addInfosOverlay(myApp.getList());
+                         myApp.getmTabMapFragment().addInfosOverlay(Info.infos);
                         break;
                    case FOLLOWING:
                      //  requestLocButton.setText("罗盘");
@@ -145,84 +134,25 @@ public class MyBaiduMapLocation{
                         mBaiduMap
                                .setMyLocationConfigeration(new MyLocationConfiguration(
                                        mCurrentMode, true, mCurrentMarker));
-                     //  myApp.getmTabMapFragment().addInfosOverlay(myApp.getList());
+                       myApp.getmTabMapFragment().addInfosOverlay(Info.infos);
                         break;
                     default:
                         break;
                 }
             }
         };
-        
-        
-        //触摸地图监听事件
-        mBaiduMap.setOnMapTouchListener(new OnMapTouchListener() {
-			
-			@Override
-			public void onTouch(MotionEvent event) {
-				// TODO Auto-generated method stub
-				mCurrentMode = LocationMode.NORMAL;
-				if(event.getAction()==MotionEvent.ACTION_MOVE){
-					
-					    requestLocButton.setImageDrawable(location_normal); 
-							mBaiduMap
-							.setMyLocationConfigeration(new MyLocationConfiguration(
-									mCurrentMode, true, null));
-					
-				
-			}
-		}
-		});
         requestLocButton.setOnClickListener(btnClickListener);	
     	// 开启定位图层
 		mBaiduMap.setMyLocationEnabled(true);
 		// 定位初始化
-     	BDLocationListener myListener = new MyLocationListener();
 		mLocationClient.registerLocationListener(myListener);
 		LocationClientOption option = new LocationClientOption();
 		option.setOpenGps(true); // 打开gps
 		option.setCoorType("bd09ll"); // 设置坐标类型
 		option.setScanSpan(1000);
 		mLocationClient.setLocOption(option);
-		mLocationClient.start();	
-		myOrientationListener = myApp.getMyOrientationListener();
-		myOrientationListener.start();
-		initOritationListener();
-	 }
-	
-	/** 
-     * 初始化方向传感器 
-     */  
-	
-	private void initOritationListener()
-	{
-	
-				
-		myOrientationListener
-				.setOnOrientationListener(new OnOrientationListener()
-				{
-					@Override
-					public void onOrientationChanged(float x)
-					{
-						mXDirection = (int) x;
-					
-						MyLocationData locData = new MyLocationData.Builder()
-								.accuracy(mCurrentAccracy)								
-								.direction(mXDirection)
-								.latitude(mCurrentLantitude)
-								.longitude(mCurrentLongitude).build();
-					
-						mBaiduMap.setMyLocationData(locData);
-											
-						mBaiduMap
-                         .setMyLocationConfigeration(new MyLocationConfiguration(
-                                 mCurrentMode, true, mCurrentMarker));
-					
-						
-
-					}
-				});
-	}
-	
+		mLocationClient.start();
+    }
     /**
 	 * 定位SDK监听函数
 	 */
@@ -235,22 +165,12 @@ public class MyBaiduMapLocation{
 			if (location == null || mMapView == null) {
 				return;
 			}
-			   // 构造定位数据  
 			MyLocationData locData = new MyLocationData.Builder()
 					.accuracy(location.getRadius())
 					// 此处设置开发者获取到的方向信息，顺时针0-360
-					.direction(mXDirection).latitude(location.getLatitude())
+					.direction(100).latitude(location.getLatitude())
 					.longitude(location.getLongitude()).build();
-			// 设置定位数据  
 			mBaiduMap.setMyLocationData(locData);
-			mCurrentAccracy = location.getRadius();  
-			mCurrentLantitude = location.getLatitude();  
-            mCurrentLongitude = location.getLongitude();
-            mCurrentlLatLng = new LatLng(mCurrentLantitude , mCurrentLongitude);
-            myApp.setmCurrentlLatLng(mCurrentlLatLng);
-            isLocation = true;   //设置定位成功信号
-            myApp.setLocation(isLocation);
-			// 第一次定位时，将地图位置移动到当前位置  
 			if (isFirstLoc) {
 				isFirstLoc = false;
 				LatLng ll = new LatLng(location.getLatitude(),

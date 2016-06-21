@@ -51,7 +51,8 @@
             android:clickable="true"
             android:text="@string/tab_nearby_text"
             android:textColor="@color/color_tab" />
-<!--  <com.coderhu.botanique.common.TabRadioButton
+
+        <com.coderhu.botanique.common.TabRadioButton
             android:id="@+id/tab_search"
             style="@style/TabMenuText"
             android:layout_marginLeft="0dp"
@@ -61,11 +62,10 @@
             TabRadioButton:drawableTop="@drawable/tab_search_bg"
             android:clickable="true"
             android:text="@string/tab_search_text"
-            android:textColor="@color/color_tab" /> -->
-       
+            android:textColor="@color/color_tab" />
 
         <com.coderhu.botanique.common.TabRadioButton
-            android:id="@+id/tab_my"
+            android:id="@+id/tab_account"
             style="@style/TabMenuText"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
